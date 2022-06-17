@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
 class MenuButton extends StatelessWidget {
+  final IconData icon;
+  final String label;
 
+  const MenuButton({super.key, required this.icon, required this.label});
 
   @override
   Widget build(BuildContext context) {
+    
     return Container(
       color:  Color.fromARGB(255, 6, 81, 116),
       child: Column(
@@ -12,11 +16,11 @@ class MenuButton extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Icon(
-            Icons.menu,
+           icon,
             color: Colors.white,
             size: 50,
             ),
-          Text('Account', style: TextStyle(color: Colors.white),)
+          Text(label, style: TextStyle(color: Colors.white),)
         ]
       )
     );
