@@ -1,7 +1,11 @@
+
+import 'package:bank/screens/account.dart';
 import 'package:bank/widgets/button.dart';
 import 'package:bank/widgets/drawing.dart';
 import 'package:bank/widgets/logo.dart';
 import 'package:flutter/material.dart';
+
+import 'card.dart';
 
 class HomePage extends StatelessWidget{
 
@@ -9,7 +13,7 @@ class HomePage extends StatelessWidget{
     Widget build(BuildContext context){
       return Scaffold(
         appBar: _BuilAppBar,
-        drawer: MainDrawer(),
+        drawer: const MainDrawer(),
         body:  Container(
         child: Column(
           children: [
@@ -17,7 +21,7 @@ class HomePage extends StatelessWidget{
               flex: 3, 
               child: Container(
                 decoration: BoxDecoration(
-                 color:  Color.fromARGB(255, 69, 176, 226),
+                 color:  const Color.fromARGB(255, 69, 176, 226),
                   gradient: RadialGradient(
                    colors: [
                      Colors.white,
@@ -35,36 +39,43 @@ class HomePage extends StatelessWidget{
                     MenuButton(
                       icon: Icons.account_balance,
                       label: 'Account',
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> const MenuAccount()));
+                      },
+                      
                     ),
                     MenuButton(
-                      icon: Icons.card_travel,
-                      label: 'Cards',
+                      icon: Icons.sd_card,
+                      label: "Card",
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> const MenuCard()));
+                      },
                     ),
-                     MenuButton(
+                     const MenuButton(
                       icon: Icons.money,
                       label: 'Payments',
                     ),
-                     MenuButton(
+                     const MenuButton(
                       icon: Icons.book_online,
                       label: 'New Account',
                     ),
-                     MenuButton(
+                     const MenuButton(
                       icon: Icons.atm,
                       label: 'Cash to ATM',
                     ),
-                     MenuButton(
+                     const MenuButton(
                       icon: Icons.qr_code,
                       label: 'Scan QR',
                     ),
-                     MenuButton(
+                     const MenuButton(
                       icon: Icons.menu,
                       label: 'Account',
                     ),
-                     MenuButton(
+                     const MenuButton(
                       icon: Icons.menu,
                       label: 'Account',
                     ),
-                     MenuButton(
+                     const MenuButton(
                       icon: Icons.menu,
                       label: 'Account',
                     ),
@@ -74,12 +85,12 @@ class HomePage extends StatelessWidget{
             Flexible(
               flex: 1, 
               child: Container(
-              color:  Color.fromARGB(255, 69, 176, 226),
+              color:  const Color.fromARGB(255, 69, 176, 226),
             )),
             Flexible(
               flex: 1, 
               child: Container(
-              color:  Color.fromARGB(255, 198, 73, 61),
+              color:  const Color.fromARGB(255, 198, 73, 61),
             )),
           ],
         ),
@@ -92,11 +103,11 @@ class HomePage extends StatelessWidget{
         title: abaLogo,
         actions: [
           IconButton(
-            icon: Icon(Icons.notifications),
+            icon: const Icon(Icons.notifications),
             onPressed: () {},
           ),
           IconButton(
-            icon: Icon(Icons.qr_code), 
+            icon: const Icon(Icons.qr_code), 
             onPressed: () {},
           )
         ],
